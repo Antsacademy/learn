@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <title>School Website</title>
+</head>
+<body>
+  
+    <nav id="desktop-nav">
+      <div class="logo"><img src="./assets/logo1.png" alt="logo"></div>
+        <div id="nav-links">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Course</a></li>
+            <li><a href="#projects">DistanceEducation</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <nav id="hamburger-nav">
+        <div class="logo"><img src="./assets/logo1.png" alt="logo"></div>
+        <div class="hamburger-menu">
+          <div  id="hamburger-menu" class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Course</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">DistanceEducation</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to Ants Academy – Nurturing Minds, Empowering Futures!
+
+              At Ants Academy, we take pride in being a leading institution dedicated to providing top-notch education in the field of Montessori, Distance Education, and Child Education. Our mission is to empower individuals with the knowledge and skills needed to excel in the dynamic world of education.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Our Free Courses</h2>
+            <p>100% OFF on Montessori Course.Embark on a journey of discovery and learning with our certified Montessori courses. Our experienced instructors and comprehensive curriculum ensure that you receive the highest quality education.</p>
+            <ul>
+              <li>Course: Free Montessori Training</li>
+            </ul>
+            <img src="./assets/pic1.jpg" alt="">
+          </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Distance Education</h2>
+            <p>Ants Academy understands the importance of flexibility in education. That's why we offer Distance Education programs that allow you to pursue your academic goals from the comfort of your own space. Our online courses maintain the same rigorous standards as our in-person offerings, ensuring a rich and engaging learning experience. For more detail Contact us
+            </p>
+            <br>
+            <img src="./assets/pic2.jpg" alt="">
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Thank you for your interest in Ants Academy! We're here to assist you and provide the information you need. Please feel free to reach out to us using the contact details below:</p>
+            <address>No:38/24,GRK Street,Near indian bank,Thirumazhisai</address>
+            <br>
+            <h2>Call:7845530469</h2>
+            <h2>Mail:antsacademy.learn@gmail.com</h2>
+            <br>
+            <br>
+          </div>
+    </section>
+      <script src="script.js">
+
+      </script>
+</body>
+</html>
