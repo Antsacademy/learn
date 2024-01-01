@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application form</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    <div class="container">
+        <header>Application</header>
+
+        <form name="submit-to-google-sheet" method="post">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="">Date of Apply(Today's Date)</label>
+                            <input type="date" name="Date-of-Apply" placeholder="Enter today's date" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Full Name</label>
+                            <input type="text" name="Name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Father's Name</label>
+                            <input type="text" name="Father-Name" placeholder="Enter your father's name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Date of Birth</label>
+                            <input type="date" name="Birth-Date" placeholder="Enter your Birth date" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Email</label>
+                            <input type="text" name="Email" placeholder="Enter your mail" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="Gender" required>
+                                <option value="" disabled selected>Select your gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="">Nationality</label>
+                            <input type="text" name="Nationality" placeholder="Enter your Nationality" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Father Occupation</label>
+                            <input type="text" name="Father-Occupation" placeholder="Enter your Father Occupation" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Address</label>
+                            <textarea name="Address" id="" cols="" rows="4" ></textarea>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Pin Code</label>
+                            <input type="text" name="Pin-Code" placeholder="Enter your PinCode" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">State</label>
+                            <input type="text" name="State" placeholder="Enter your State" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Contact Number</label>
+                            <input type="tel" name="Contact-Number" placeholder="Enter your your Mobile Number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="">Course Name</label>
+                            <input type="text" name="Course-Name" placeholder="Enter your Course Name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="category">Category</label>
+                            <select id="category" name="Category" required>
+                                <option value="General">General</option>
+                                <option value="OBC">OBC</option>
+                                <option value="SC">SC</option>
+                                <option value="ST">ST</option>
+                                <option value="SBC">SBC</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button type="submit" class="nextBtn">Submit
+                </button>
+
+            </div>
+        </form>
+        <span id="msg"></span>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyR98XYbtJmr4vIzoNdIuyQG_H6HqQMWJy78gggUdCHbvTzItVluBWf2xSpngcz4_ZBKA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Form Submitted Successfully" 
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },2000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
